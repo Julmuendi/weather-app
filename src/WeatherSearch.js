@@ -15,11 +15,10 @@ export default function WeatherSearch(){
             humidity:response.data.main.humidity,
             feelslike:response.data.main.feels_like,
             description:response.data.weather[0].description,
-            icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
 
             }
         );
-        console.log(weather.icon);
+        
         
     }
 
@@ -41,9 +40,6 @@ if(loaded){
         <div className="WeatherSearch">
             {form}
             <ul>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
           <li>Description:{weather.description}</li>
           <li>Temperature:{Math.round(weather.temperature)}°C</li>
           <li>Humidity:{weather.humidity}%</li>
